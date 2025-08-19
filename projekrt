@@ -1,0 +1,9 @@
+werkstatt-server/
+├─ package.json
+├─ server.js
+├─ .env.example
+├─ data/               (wird automatisch erstellt)
+├─ public/
+│  ├─ index.html
+│  ├─ style.css
+│  └─ app.js
