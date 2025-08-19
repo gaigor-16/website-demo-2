@@ -1,0 +1,52 @@
+async function postJSON(url, data) {
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+  return res.json();
+}
+
+// Termin-Anfrage
+const apptForm = document.getElementById("apptForm");
+const apptMsg = document.getElementById("apptMsg");
+if (apptForm) {
+  apptForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    apptMsg.textContent = "Sende…";
+    const data = Object.fromEntries(new FormData(apptForm).entries());
+    try {
+      const out = await postJSON("/api/appointments", data);
+      if (out.ok) {
+        apptMsg.textContent = "Danke! Wir melden uns zur Terminbestätigung.";
+        apptForm.reset();
+      } else {
+        apptMsg.textContent = "Bitte Felder prüfen.";
+      }
+    } catch {
+      apptMsg.textContent = "Fehler – bitte später erneut versuchen.";
+    }
+  });
+}
+
+// Kontakt
+const contactForm = document.getElementById("contactForm");
+const contactMsg = document.getElementById("contactMsg");
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    contactMsg.textContent = "Sende…";
+    const data = Object.fromEntries(new FormData(contactForm).entries());
+    try {
+      const out = await postJSON("/api/contact", data);
+      if (out.ok) {
+        contactMsg.textContent = "Danke! Wir melden uns.";
+        contactForm.reset();
+      } else {
+        contactMsg.textContent = "Bitte Felder prüfen.";
+      }
+    } catch {
+      contactMsg.textContent = "Fehler – bitte später erneut versuchen.";
+    }
+  });
+}
