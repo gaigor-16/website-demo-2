@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KFZ Technik Kostka – Autowerkstatt Velbert</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <h1>KFZ Technik Kostka</h1>
+      <p>Autowerkstatt in Velbert – Inspektion • Reifen • HU/AU • Ölwechsel • Smart-Repair</p>
+      <div class="cta">
+        <a href="#termin" class="btn">Termin anfragen</a>
+        <a href="#kontakt" class="btn btn-outline">Kontakt</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="leistungen">
+      <h2>Leistungen</h2>
+      <ul class="grid">
+        <li><h3>Inspektion</h3><p>Herstellervorgaben, Serviceheft, Garantie.</p></li>
+        <li><h3>Reifenservice</h3><p>Wechsel, Auswuchten, Einlagerung.</p></li>
+        <li><h3>HU/AU</h3><p>Untersuchung regelmäßig im Haus.</p></li>
+        <li><h3>Öl- & Bremsenservice</h3><p>Qualitätsöle, schnelle Abwicklung.</p></li>
+        <li><h3>Smart-Repair</h3><p>Kratzer/Dellen/Lack punktgenau.</p></li>
+      </ul>
+    </section>
+
+    <section id="termin">
+      <h2>Termin anfragen</h2>
+      <form id="apptForm" class="card">
+        <div class="row">
+          <input name="name" placeholder="Ihr Name" required />
+          <input name="email" type="email" placeholder="Ihre E-Mail" required />
+        </div>
+        <div class="row">
+          <input name="phone" placeholder="Telefon" required />
+          <select name="service" required>
+            <option value="" disabled selected>Leistung wählen</option>
+            <option>Inspektion</option>
+            <option>Reifenwechsel</option>
+            <option>HU/AU</option>
+            <option>Ölwechsel</option>
+            <option>Smart-Repair</option>
+          </select>
+        </div>
+        <input name="preferred" placeholder="Wunschzeit (z. B. Mi 10–12 Uhr)" required />
+        <button type="submit" class="btn">Anfrage senden</button>
+        <p id="apptMsg" class="msg"></p>
+      </form>
+    </section>
+
+    <section id="kontakt">
+      <h2>Kontakt</h2>
+      <div class="card">
+        <p>📞 02051 123456 • ✉️ info@kfz-kostka.de</p>
+        <p>📍 Musterstraße 1, 42549 Velbert</p>
+        <form id="contactForm">
+          <input name="name" placeholder="Ihr Name" required />
+          <input name="email" type="email" placeholder="Ihre E-Mail" required />
+          <input name="phone" placeholder="Telefon (optional)" />
+          <textarea name="message" placeholder="Ihre Nachricht" required></textarea>
+          <button type="submit" class="btn">Abschicken</button>
+          <p id="contactMsg" class="msg"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <small>© 2025 KFZ Technik Kostka • <a href="#">Impressum</a> • <a href="#">Datenschutz</a></small>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
